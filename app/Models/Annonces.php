@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Annonces extends Model
+{
+    use HasFactory;
+    protected $table = 'annonce';
+    protected $fillable = ['actor','actor2',
+            'anonce','dates',];
+
+
+    public function getRouteKeyName()
+    {
+        return "actor2";
+    }
+    
+   
+}
