@@ -9,6 +9,9 @@ use App\Models\Vehicules;
 
 class paiementController extends Controller
 {
+    public function __construct()
+    {
+        return view('auth.admin.login');    }
     public function index()
     {
         return view("paiements.index")->with([

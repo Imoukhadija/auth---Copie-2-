@@ -1,5 +1,5 @@
 
-    @extends("admin.base")
+    @extends("addmin.base")
 @section('content')
 
 <div class="container-xl">

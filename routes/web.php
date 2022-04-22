@@ -41,12 +41,25 @@ Route::get('costumer/login', [App\Http\Controllers\Auth\CostumerLoginController:
 Route::post('costumer/login', [App\Http\Controllers\Auth\CostumerLoginController::class, 'login'])->name('costumer.login');
 Route::group(["prefix"=>"admin","middleware"=>"assign.guard:admin,admin/login"],function(){
     Route::get("dashboard",function(){
-        return view ("admin.home");
+        return view ("admin.dashboard");
     });
+    Route::get('paiements', [paiementController::class, 'index'])->name('paiements.index'); 
+ Route::resource('categories', CategoriesController::class);
+ Route::resource('vehicules', VehiculesController::class);
+ Route::resource('garanties', GarantieController::class);
+ Route::resource('annonces', AnnoncesController::class);
+ Route::resource('clients', ClientsController::class);
+ Route::resource('ventes', VentesController::class);
+ Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
+Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');
+Route::get('/blog',[home::class,'index'])->name("home");
+Route::get('/TableauBordre',[TableauBordreController::class,'index'])->name("indextab");
+Route::get('rapport',[ReportController::class,'index'])->name("rapport.index");
+Route::post('rapport/genere', [ReportController::class,'genere'])->name("rapport.genere");
 });
 Route::group(["prefix"=>"costumer","middleware"=>"assign.guard:costumer,costumer/login"],function(){
     Route::get("dashboard",function(){
-        return view ("costumer.home");
+        return view ("costumer.dashboard");
     });
 });
 //Route::get('/home', 'HomeController@index')->name('home');

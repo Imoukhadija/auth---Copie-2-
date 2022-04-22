@@ -1,5 +1,5 @@
 
-    @extends("admin.base")
+    @extends("addmin.base")
 @section('content')
 
 @foreach($clients as $client)

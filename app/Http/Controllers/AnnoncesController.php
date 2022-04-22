@@ -18,8 +18,7 @@ class AnnoncesController extends Controller
     //impossible de voir categorie si tu n est pas connecter auth
     public function __construct()
     {
-        $this->middleware('auth');
-    }
+        return view('auth.admin.login');    }
     public function index()
     {
         return view("managments.annonces.index")->with([

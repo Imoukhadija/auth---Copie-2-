@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('admin.layouts.head')
+@include('addmin.layouts.head')
 
 <body   class="hold-transition sidebar-mini layout-fixed ">
     <div class="wrapper">
@@ -11,11 +11,11 @@
         </div>
 
         <!-- Navbar -->
-        @include('admin.layouts.navbar')
+        @include('addmin.layouts.navbar')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        @include('admin.layouts.sidebar')
+        @include('addmin.layouts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -49,7 +49,7 @@
         </div>
 
         <!-- /.content-wrapper -->
-        @include('admin.layouts.footer')
+        @include('addmin.layouts.footer')
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

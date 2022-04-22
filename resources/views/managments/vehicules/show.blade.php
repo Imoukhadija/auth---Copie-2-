@@ -1,4 +1,4 @@
-@extends("admin.base")
+@extends("addmin.base")
 @section('title', 'vehicule')
 @section('content')
     <form>

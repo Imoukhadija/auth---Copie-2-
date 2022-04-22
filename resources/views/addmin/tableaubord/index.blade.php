@@ -1,4 +1,4 @@
-@extends("admin.base")
+@extends("addmin.base")
 @section('content')
 <div class="row">
           <div class="col-lg-3 col-6">

@@ -10,8 +10,7 @@ class VentesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware("auth");
-    }
+        return view('auth.admin.login');    }
     /**
      * Display a listing of the resource.
      *

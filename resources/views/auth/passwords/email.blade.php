@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('addmin.base')
 
 @section('content')
 <div class="container">

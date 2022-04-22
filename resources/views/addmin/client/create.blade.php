@@ -1,4 +1,4 @@
-@extends("admin.base")
+@extends("addmin.base")
 @section('content')
     <form method="post" action="{{ route('clientstore') }}">
     @csrf

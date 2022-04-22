@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 
 class TableauBordreController extends Controller
 {
+    public function __construct()
+    {
+        return view('auth.admin.login');    }
     /**
      * Display a listing of the resource.
      *
