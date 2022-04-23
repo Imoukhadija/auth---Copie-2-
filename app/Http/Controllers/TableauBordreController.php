@@ -28,7 +28,7 @@ class TableauBordreController extends Controller
         $categoriesc = Categories::count();
         $vehiculesc = Vehicules::count();
        
-        return view('admin.tableaubord.index',compact('clientsc','garantiesc','ventesc',"categoriesc",'vehiculesc'));
+        return view('addmin.tableaubord.index',compact('clientsc','garantiesc','ventesc',"categoriesc",'vehiculesc'));
         }
 
     /**

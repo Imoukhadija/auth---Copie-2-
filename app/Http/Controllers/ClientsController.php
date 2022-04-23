@@ -14,7 +14,7 @@ class ClientsController extends Controller
 {
     public function __construct()
     {
-        return view('auth.admin.login');    }
+        return view('auth.costumer.login');    }
     /**
      * Display a listing of the resource.
      *

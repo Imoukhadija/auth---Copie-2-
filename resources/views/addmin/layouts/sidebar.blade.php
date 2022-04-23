@@ -162,6 +162,14 @@
                         </p>
                     </a>
                 </li>
+         <li class="nav-item">
+                    <a href=" {{url('admin/settings')}}" class="nav-link">
+                    <i class="fa-solid fa-file"></i>
+                        <p>
+                        Parametre
+                        </p>
+                    </a>
+                </li>
          
             
           

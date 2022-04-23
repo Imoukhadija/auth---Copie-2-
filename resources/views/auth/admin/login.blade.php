@@ -1,4 +1,4 @@
-@extends('addmin.base')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -50,7 +50,7 @@ border-radius: 20%;" src="images/bg-4.png" alt="" >
 
                 <div class="card-header" style="
 font-size:40px;text-align:center" >{{ __('Système de gestion de l\'assurance automobile ') }}</div>
-                        <h3> costumer</h3>
+                        <h3> admin</h3>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.login') }}">

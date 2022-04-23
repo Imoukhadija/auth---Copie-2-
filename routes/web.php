@@ -14,6 +14,7 @@ use App\Http\Controllers\TableauBordreController;
  use App\Http\Controllers\home;
  use App\Http\Controllers\AnnoncesController;
  use App\Http\Controllers\ReportController;
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,9 +27,7 @@ use App\Http\Controllers\TableauBordreController;
 */
  
 
-Route::get('/', function () {
-    return view('home.index' );
- })->name("homeassurance");
+Route::get('/', [App\Http\Controllers\accController::class, 'index'])->name("homeassurance");
 
 //Auth::routes(["register" => false, "reset" => false]);
  Route::get('home', [HomeController::class, 'index'])->name('home');
@@ -48,6 +47,7 @@ Route::group(["prefix"=>"admin","middleware"=>"assign.guard:admin,admin/login"],
  Route::resource('vehicules', VehiculesController::class);
  Route::resource('garanties', GarantieController::class);
  Route::resource('annonces', AnnoncesController::class);
+ 
  Route::resource('clients', ClientsController::class);
  Route::resource('ventes', VentesController::class);
  Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
@@ -56,11 +56,16 @@ Route::get('/blog',[home::class,'index'])->name("home");
 Route::get('/TableauBordre',[TableauBordreController::class,'index'])->name("indextab");
 Route::get('rapport',[ReportController::class,'index'])->name("rapport.index");
 Route::post('rapport/genere', [ReportController::class,'genere'])->name("rapport.genere");
+Route::get('/settings', [App\Http\Controllers\SettingController::class, 'index']);
+Route::post('/settings', [App\Http\Controllers\SettingController::class, 'savedata']);
+
+
 });
 Route::group(["prefix"=>"costumer","middleware"=>"assign.guard:costumer,costumer/login"],function(){
     Route::get("dashboard",function(){
         return view ("costumer.dashboard");
     });
+
 });
 //Route::get('/home', 'HomeController@index')->name('home');
  /*Route::get('home', [TableauBordreController::class, 'index'])->name('home');

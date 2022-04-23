@@ -43,7 +43,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand alo" href="index.html"><img style="width: 300px;height: 50px;position: absolute;top: 0;bottom: 0;left:0" src="images/sahamlogo.png" alt=""></a>
+                    
+                    <a class="navbar-brand alo" href="index.html">
+                     @php
+         $setting= \App\Models\Setting::find(1); @endphp
+                 @php  $annone= \App\Models\Annonces::all(); @endphp
+
+            <img style="width: 300px;height: 50px;position: absolute;top: 0;bottom: 0;left:0"   src="{{ asset('public/images/'.$setting->logo) }}" alt="SAHAM">
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right scroll-to">
@@ -69,7 +75,7 @@
                             </ul>
                         </li>
                          <li><a href="#contact">Contacter-nous</a></li>
-                        <li><a href="{{route('login')}}">connection</a></li>
+                        <li><a href="{{route('admin.login')}}">connection</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
@@ -319,7 +325,7 @@
                             <ul class="slides">
                                 <li>
                                     <div class="slide-items">
-                                        <img src="images/bg-4.png" alt="">
+                                        <img src="{{ asset('public/images/'.$setting->favicon) }}" alt="">
                                         <p>
                                         Que vous soyez particulier, professionnel ou entreprise, nos équipes sont à votre écoute pour vous accompagner dans la réalisation de vos projets et vous conseiller au mieux pour vos besoins d'assurances aussi bien pour votre vie privée que pour votre activité professionnelle.
 
@@ -329,7 +335,8 @@
                                 </li>
                                 <li>
                                     <div class="slide-items">
-                                        <img src="images/bg-4.png" alt="">
+                                        <img src="{{ asset('public/images/'.$setting->favicon) }}" alt="">
+
                                         <p>
                                         Nous sommes à votre disposition, n'hésitez pas à nous rendre visite ou nous contacter pour prendre RDV, nous serions ravis de pouvoir vous accueillir et répondre au mieux à vos sollicitations.
 
@@ -694,62 +701,26 @@ A bientôt !                                        </p>
                 <!-- heading row -->
             </div>
             <!-- container -->
-
+  @foreach ($annonce as $annonce)
             <div class="news-wrapper  container-fluid">
                 <div class='row'>
-                <div class="col-sm-6 text-center no-padding">
-                    <a class="news-inner" href="post-single.html" style="background:url(images/bg-1.jpg) no-repeat; background-size: cover;">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <a class="news-inner" href="post-single.html" style="background:url(images/bg-1.jpg) no-repeat; background-size: cover;">
                         <div class="post-overlay"></div>
                         <div class="post-preview-content">
-                            <h4 class="date">  2022</h4>
-                            <h3 class="title">Les voitures qui sont dépassés 15 ans n'ont pas le droit de bénéficier de sevices dépanage </h3>
+                            <h4 class="date">{{$annonce ->dates}} </h4>
+                            <h3 class="title"> {{$annonce ->anonce}}  </h3>
                             <span class="border-line"></span>
-                            <p class="author">Par SAHAM</p>
+                            <p class="author">{{$annonce ->actor}} </p>
                         </div>
                     </a>
+                    </div>
+                    
                 </div>
                 <!-- news col -->
-                <div class="col-sm-6 text-center no-padding">
-                    <a class="news-inner" href="post-single.html" style="background:url(images/bg-2.jpg) no-repeat; background-size: cover;">
-                        <div class="post-overlay"></div>
-                        <div class="post-preview-content">
-                            <h4 class="date"> 2022</h4>
-                            <h3 class="title">Lancement de noveau  programme Fid's <br> SAHAM de fidélité unique et exclusif qui <br> vous permet de bénéficier d’avantages <br> chez nous .
-                                
-                            </h3>
-                            
-                            <span class="border-line"></span>
-                            <p class="author">Par SAHAM</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- news col -->
-                <div class="col-sm-6 text-center no-padding">
-                    <a class="news-inner" href="post-single.html" style="background:url(images/bg-3.jpg) no-repeat; background-size: cover;">
-                        <div class="post-overlay"></div>
-                        <div class="post-preview-content">
-                            <h4 class="date"> 2022</h4>
-                            <h2 class="title">Lancement de Assur’Auto Premium est un produit unique comprenant à la fois des prestations d’assurance et d’assistance et visant à vous offrir un accompagnement de Bout en Bout en cas d’accident pour vous, vos passagers ou votre véhicule. </h2>
-                            <span class="border-line"></span>
-                            <p class="author">Par SAHAM</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- news col -->
-                <div class="col-sm-6 text-center no-padding">
-                    <a class="news-inner" href="post-single.html" style="background:url(images/bg-1.jpg) no-repeat; background-size: cover;">
-                        <div class="post-overlay"></div>
-                        <div class="post-preview-content">
-                            <h4 class="date">2022</h4>
-                            <h2 class="title">Assur’Auto Premium est un produit unique comprenant à la fois des prestations d’assurance et d’assistance et visant à vous offrir un accompagnement de Bout en Bout en cas d’accident pour vous, vos passagers ou votre véhicule. </h2>
-                            <span class="border-line"></span>
-                            <p class="author">Par SAHAM</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- news col -->
-                </div>
+               
             </div>
+            @endforeach
             <div class="clearfix"></div>
         </section>
         <!-- news section end -->
@@ -769,16 +740,15 @@ A bientôt !                                        </p>
                         <div class="row contact-details">
                             <div class="col-sm-4 margin-bottom30 text-center">
                                 <i class="ion-ios-location-outline"></i>
-                                <h4>n°4, bloc C - Amicale des fonctionaires
-85000 Tiznit</h4>
+                                <h4>{{$setting ->localisation}}</h4>
                             </div>
                             <div class="col-sm-4 margin-bottom30 text-center">
                                 <i class="ion-ios-email-outline"></i>
-                                <h4>assurances.bahmou@sahamassurance.com</h4>
+                                <h4>{{$setting ->email}}</h4>
                             </div>
                             <div class="col-sm-4 margin-bottom30 text-center">
                                 <i class="ion-ios-telephone-outline"></i>
-                                <h4>05286-00303 </h4>
+                                <h4>{{$setting ->telephon}}</h4>
                             </div>
                         </div><!--contact details-->
                     </div>
