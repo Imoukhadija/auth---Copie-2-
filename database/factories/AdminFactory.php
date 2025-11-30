@@ -21,15 +21,13 @@ class AdminFactory extends Factory
      */
     public function definition()
     {
- 
             return [
-                'name' => "khadija",
-                'email' => "imkhadija@email.com",
+                'name' => $this->faker->name(),
+                'email' => $this->faker->unique()->safeEmail(),
                 'email_verified_at' => now(),
-                'password' => Hash::make("123456789"), // password
+                'password' => Hash::make('Password123!'), // password
                 'remember_token' => Str::random(10),
             ];
- 
     }
 
     /**

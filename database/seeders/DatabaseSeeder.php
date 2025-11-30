@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(AdminSeeder::class);
         \App\Models\User::factory(1)->create();
          \App\Models\Clients::factory(5)->create();
          
          \App\Models\Vehicules::factory(5)->create();
          
          \App\Models\Categories::factory(5)->create();
-         \App\Models\Admin::factory(1)->create();
          \App\Models\Costumer::factory(1)->create();
 
     }

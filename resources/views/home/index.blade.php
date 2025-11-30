@@ -32,6 +32,10 @@
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="80">
 
+        @php
+            $setting = \App\Models\Setting::first();
+        @endphp
+
 
         <!-- Static navbar -->
         <nav class="navbar navbar-default navbar-fixed-top before-color">
@@ -44,12 +48,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand alo" href="index.html">
-                     @php
-         $setting= \App\Models\Setting::find(1); @endphp
-                 @php  $annone= \App\Models\Annonces::all(); @endphp
-
-            <img style="width: 300px;height: 50px;position: absolute;top: 0;bottom: 0;left:0"   src="{{ asset('public/images/'.$setting->logo) }}" alt="SAHAM">
+                        <a class="navbar-brand alo" href="index.html">
+                    <img style="width: 300px;height: 50px;position: absolute;top: 0;bottom: 0;left:0"   src="{{ asset('public/images/' . (optional($setting)->logo ?? 'default-logo.png')) }}" alt="SAHAM">
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right scroll-to">
@@ -325,7 +325,7 @@
                             <ul class="slides">
                                 <li>
                                     <div class="slide-items">
-                                        <img src="{{ asset('public/images/'.$setting->favicon) }}" alt="">
+                                        <img src="{{ asset('public/images/' . (optional($setting)->favicon ?? 'default-favicon.png')) }}" alt="">
                                         <p>
                                         Que vous soyez particulier, professionnel ou entreprise, nos équipes sont à votre écoute pour vous accompagner dans la réalisation de vos projets et vous conseiller au mieux pour vos besoins d'assurances aussi bien pour votre vie privée que pour votre activité professionnelle.
 
@@ -335,7 +335,7 @@
                                 </li>
                                 <li>
                                     <div class="slide-items">
-                                        <img src="{{ asset('public/images/'.$setting->favicon) }}" alt="">
+                                        <img src="{{ asset('public/images/' . (optional($setting)->favicon ?? 'default-favicon.png')) }}" alt="">
 
                                         <p>
                                         Nous sommes à votre disposition, n'hésitez pas à nous rendre visite ou nous contacter pour prendre RDV, nous serions ravis de pouvoir vous accueillir et répondre au mieux à vos sollicitations.
@@ -740,15 +740,15 @@ A bientôt !                                        </p>
                         <div class="row contact-details">
                             <div class="col-sm-4 margin-bottom30 text-center">
                                 <i class="ion-ios-location-outline"></i>
-                                <h4>{{$setting ->localisation}}</h4>
+                                <h4>{{ optional($setting)->localisation ?? 'Localisation non définie' }}</h4>
                             </div>
                             <div class="col-sm-4 margin-bottom30 text-center">
                                 <i class="ion-ios-email-outline"></i>
-                                <h4>{{$setting ->email}}</h4>
+                                <h4>{{ optional($setting)->email ?? 'contact@example.com' }}</h4>
                             </div>
                             <div class="col-sm-4 margin-bottom30 text-center">
                                 <i class="ion-ios-telephone-outline"></i>
-                                <h4>{{$setting ->telephon}}</h4>
+                                <h4>{{ optional($setting)->telephon ?? '+212 000 000' }}</h4>
                             </div>
                         </div><!--contact details-->
                     </div>
