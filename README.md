@@ -145,7 +145,7 @@ Middleware Auth Laravel
 # 🛡️ Espace Administrateur
 
 ## 🖼️ Dashboard
-![Dashboard](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/1764705758_SAHAM.PNG)
+![Dashboard](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/dashbord.png)
 
 ## 🏘️ Exemple Assurance
 ![Assurance](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/1764781932_assurance-confort-habitation-560x320.jpg)
@@ -160,7 +160,7 @@ Middleware Auth Laravel
 # 🗂️ Gestion des Catégories
 
 ## 📋 Liste des catégories
-![Listes catégories](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20categories.png)
+![Listes catégories](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes des categories.png)
 
 ## 👁️ Détail catégorie
 ![Show catégorie](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/show%20ds%20categories.png)
