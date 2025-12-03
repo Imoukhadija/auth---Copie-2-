@@ -133,43 +133,66 @@ HTML / CSS / JavaScript
 Bootstrap ou Tailwind (selon ton projet)
 
 Middleware Auth Laravel
-🖼️ Aperçu du projet
-🏠 Home page – Visiteur
+
+
+# 🛡️ SAHAM – Application Web d’Assurance
+
+## 🏠 Page d’accueil (Visiteur)
 ![Home visiteur](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/homesaham.png)
-🌿 Sections Visiteur
-Atanome
-![Atanome visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/atanome.png)
-Calcul des calories
-![Calcul visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/calcule.png)
-Progression
-![Progress visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/progress.png)
-Protéines
-![Protein visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/protien.png)
-Profil utilisateur
-![Info Profil visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/infop.png)
-Changement de mot de passe
-![Password Info visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/infopassword.png)
-Régime alimentaire
-![Régime visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/regime.png)
-🛡️ Espace Administrateur
-Acides
-![Acide Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/acide.png)
-Dashboard Admin
-![Dashboard Admin ](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/dashboerd.png)    
-Informations Admin
-![Info Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/infoadmin.png)
-Mot de passe Admin
-![Password Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/passsword.png)
-Protéines
-![Protein Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/protinn.png)
-Scheches
-![Sheches Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/sheches.png)
-Produits
-![Show Product Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/showproduct.png)
-Utilisateurs
-![Users Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/users.png)
-Vitamines
-![Vitamine Admin](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/vitamine.png)
+
+---
+
+# 🛡️ Espace Administrateur
+
+## 🖼️ Dashboard
+![Dashboard](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/1764705758_SAHAM.PNG)
+
+## 🏘️ Exemple Assurance
+![Assurance](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/1764781932_assurance-confort-habitation-560x320.jpg)
+
+---
+
+# 📊 Rapports
+![Rapports](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/les%20rapports%20showing.png)
+
+---
+
+# 🗂️ Gestion des Catégories
+
+## 📋 Liste des catégories
+![Listes catégories](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20categories.png)
+
+## 👁️ Détail catégorie
+![Show catégorie](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/show%20ds%20categories.png)
+
+---
+
+# 👥 Gestion des Clients
+
+## 📋 Liste des clients
+![Listes clients](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20clients.png)
+
+## ✏️ Modifier un client
+![Modifier client](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/modifer%20client%20%20.png)
+
+---
+
+# 🛡️ Gestion des Garanties
+![Listes garanties](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20garanties.png)
+
+![Listes garan](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20garan.png)
+
+---
+
+# 🚗 Gestion des Véhicules
+![Listes véhicules](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20vehicules.png)
+
+---
+
+# 💳 Gestion des Paiements
+![Listes paiement](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20paiement.PNG)
+
+
 📬 Contact
 
 Développeuse : Khadija Imou
