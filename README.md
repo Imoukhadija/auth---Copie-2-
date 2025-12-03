@@ -160,7 +160,7 @@ Middleware Auth Laravel
 # 🗂️ Gestion des Catégories
 
 ## 📋 Liste des catégories
-![Listes catégories](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes des categories.png)
+![Listes catégories](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20categories.png)
 
 ## 👁️ Détail catégorie
 ![Show catégorie](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/show%20ds%20categories.png)
