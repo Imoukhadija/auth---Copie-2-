@@ -136,7 +136,7 @@ Middleware Auth Laravel
 
 
 # 🛡️ SAHAM – Application Web d’Assurance
-
+ 
 ## 🏠 Page d’accueil (Visiteur)
 ![Home visiteur](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/homesaham.png)
 
@@ -194,6 +194,12 @@ Middleware Auth Laravel
 
 # 💳 Gestion des Paiements
 ![Listes paiement](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20paiement.PNG)
+
+# 💳 Gestion de Profile
+![Listes paiement](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/admincontrol.png)
+
+# 💳 Gestion des Paiements
+![Listes paiement](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/add%20paiement.png)
 
 
 📬 Contact
