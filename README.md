@@ -135,7 +135,7 @@ Bootstrap ou Tailwind (selon ton projet)
 Middleware Auth Laravel
 🖼️ Aperçu du projet
 🏠 Home page – Visiteur
-![Home visiteur](https://github.com/Imoukhadija/auth---Copie-2-/tree/main/public/images/home.png)
+![Home visiteur](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/home.png)
 🌿 Sections Visiteur
 Atanome
 ![Atanome visiteur](https://github.com/KHADIJAIMOU/BodyBp/blob/main/public/img/images/atanome.png)
