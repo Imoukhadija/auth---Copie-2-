@@ -166,14 +166,17 @@ Middleware Auth Laravel
 ![Show catégorie](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/show%20ds%20categories.png)
 
 ---
+## ✏️ Modifier un client
+![Modifier client](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/modifer%20client%20.png)
+
 
 # 👥 Gestion des Clients
 
 ## 📋 Liste des clients
 ![Listes clients](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/listes%20des%20clients.png)
 
-## ✏️ Modifier un client
-![Modifier client](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/modifer%20client%20%20.png)
+## ✏️ Ajouter un client
+![Modifier client](https://github.com/Imoukhadija/auth---Copie-2-/blob/main/public/images/client.png)
 
 ---
 
