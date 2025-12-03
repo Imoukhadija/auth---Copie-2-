@@ -5,50 +5,69 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="d-flex flex-row justify-content-between align-items-center border-bottom pb-1">
-                                    <h3 class="text-secondary">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
-  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-</svg> Rapports
-                                    </h3>
-                                    <a href="{{ route("home") }}" class="btn btn-outline-secondary">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
-</svg>
+                <div class="card rapport-card-layout">
+                    <div class="row no-gutters">
+
+                        <!-- Left colored panel -->
+                        <div class="col-md-4 rapport-card-side">
+                            <div class="rapport-side-inner">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <button class="rapport-menu-btn" type="button">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                    <a href="{{ route('home') }}" class="rapport-back-link">
+                                      
                                     </a>
                                 </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div  class="col-sm-11 shadow mx-auto p-2">
-                                                <form action="{{ route("rapport.genere") }}" method="post">
-                                                    @csrf
-                                                    
-                                                    <div class="form-group">
-                                                        <input type="date" name="from" placeholder="Date Début" class="form-control">
-                                                       <input type="date" name="to" placeholder="Date Fin" class="form-control">
 
-                                                    </div>
-                                                    
-                                                    <div class="form-group">
-                                                    <button  class="btn btn-block btn-outline-danger btn-xs">   Afficher le rapport</button>
-                                                      
-                                                    </div>
-                                                </form>
-                                            </div>
+                                <p class="rapport-label mb-1">Rapport</p>
+                                <h2 class="rapport-day mb-1">{{ \Carbon\Carbon::now()->format('l') }}</h2>
+                                <p class="rapport-date mb-4">{{ \Carbon\Carbon::now()->format('j F Y') }}</p>
+
+                                @isset($total)
+                                    <div class="rapport-total-box mt-auto">
+                                        <span>Période</span>
+                                        <strong>{{ $DateDebut }} &rarr; {{ $Datefin }}</strong>
+                                        <div class="rapport-total-amount mt-2">
+                                            Total : {{ $total }} DH
                                         </div>
                                     </div>
+                                @endisset
+                            </div>
+                        </div>
+
+                        <!-- Right calendar / filter panel -->
+                        <div class="col-md-8 rapport-card-main">
+                            <div class="rapport-main-inner">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="mb-0 text-muted">Filtrer les rapports</h5>
                                 </div>
-                                
+
+                                <form action="{{ route("rapport.genere") }}" method="post" class="rapport-filter-form mb-3">
+                                    @csrf
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-2">
+                                            <label class="small text-muted mb-1">Date début</label>
+                                            <input type="date" name="from" placeholder="Date Début" class="form-control form-control-lg">
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label class="small text-muted mb-1">Date fin</label>
+                                            <input type="date" name="to" placeholder="Date Fin" class="form-control form-control-lg">
+                                        </div>
+                                    </div>
+
+                                    <div class="text-right mt-3">
+                                        <button class="btn btn-primary btn-lg px-4">Afficher le rapport</button>
+                                    </div>
+                                </form>
+
                                 @isset($total)
-                                    <h4 class="text-primary mt-4 mb-2 font-weight-bold">
+                                    <h5 class="text-primary mt-2 mb-2 font-weight-bold">
                                         Rapport de {{ $DateDebut  }} à {{ $Datefin }}
-                                    </h4>
-                                    <table class="table table-hover table-responsive-sm">
+                                    </h5>
+                                    <table class="table table-hover table-responsive-sm rapport-table">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -119,15 +138,10 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    <p class="text-danger text-center font-weight-bold">
-                                        <span class="btn btn-block btn-outline-primary btn-xs">
-                                            Total : {{ $total }} DH
-                                        </span>
-                                    </p>
-                                    
                                 @endisset
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -2,27 +2,31 @@
 
 
 @section("content")
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card shadow-lg border-0 rounded-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="d-flex flex-row justify-content-between align-items-center border-bottom pb-1">
-                                    <h3 class="text-secondary">
-                                        <i class="fas fa-credit-card"></i> Ventes
+                                <div class="d-flex flex-row justify-content-between align-items-center mb-3">
+                                    <h3 class="mb-0">
+                                        <span class="badge badge-primary px-3 py-2 d-inline-flex align-items-center" style="font-size: 0.95rem;">
+                                            <i class="fas fa-credit-card mr-2"></i>
+                                            Ventes
+                                        </span>
                                     </h3>
-                                    <a href="{{ route("paiements.index") }}" class="btn btn-primary">
-                                        <i class="fas fa-plus fa-x2"></i>
+                                    <a href="{{ route("paiements.index") }}" class="btn btn-primary rounded-pill shadow-sm d-inline-flex align-items-center justify-content-center">
+                                        <i class="fas fa-plus"></i>
                                     </a>
                                 </div>
-                                <table class="table table-hover table-responsive-sm">
+                                <table class="table table-hover table-striped table-responsive-sm align-middle mb-0">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>garanties</th>
-                                            <th>vehicules</th>
+                                            <th>Garanties</th>
+                                            <th>Image garanties</th>
+                                            <th>Prix garanties</th>
+                                            <th>Véhicules</th>
                                             <th>Client</th>
                                             <th>Quantité</th>
                                             <th>Total</th>
@@ -39,25 +43,26 @@
                                                 </td>
                                                 <td>
                                                     @foreach($vente->garanties()->where("ventes_id",$vente->id)->get() as $garanty)
-                                                        <div class="col-md-4 mb-2">
-                                                            <div class="h-100">
-                                                                <div class="d-flex
-                                                                flex-column justify-content-center
-                                                                align-items-center">
-                                                                    <img
-                                                                        src="{{ asset("images/garantie/". $garanty->image) }}" alt="{{ $garanty->titre}}"
-                                                                        class="img-fluid rounded-circle"
-                                                                        width="50"
-                                                                        height="50"
-                                                                    >
-                                                                    <h5 class="font-weight-bold mt-2">
-                                                                        {{ $garanty->titre }}
-                                                                    </h5>
-                                                                    <h5 class="text-muted">
-                                                                        {{ $garanty->price }} DH
-                                                                    </h5>
-                                                                </div>
-                                                            </div>
+                                                        <div class="mb-1">
+                                                            <span class="font-weight-bold">{{ $garanty->titre }}</span>
+                                                        </div>
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    @foreach($vente->garanties()->where("ventes_id",$vente->id)->get() as $garanty)
+                                                        <div class="mb-1">
+                                                            <img
+                                                                src="{{ asset("images/garantie/". $garanty->image) }}" alt="{{ $garanty->titre}}"
+                                                                class="rounded-circle"
+                                                                width="100"
+                                                                height="100">
+                                                        </div>
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    @foreach($vente->garanties()->where("ventes_id",$vente->id)->get() as $garanty)
+                                                        <div class="mb-1 text-muted">
+                                                            {{ $garanty->prix }} DH
                                                         </div>
                                                     @endforeach
                                                 </td>
@@ -93,7 +98,6 @@
                                                     {{ $vente->paiement_status === "paid" ? "Payé" : "Impayé"}}
                                                 </td>
                                                 <td class="d-flex flex-row justify-content-center align-items-center">
-                                                    
                                                     <form id="{{ $vente->id }}" action="{{ route("ventes.destroy",$vente->id) }}" method="post">
                                                         @csrf
                                                         @method("DELETE")
@@ -103,7 +107,7 @@
                                                                 if(confirm('Voulez vous supprimer la vente {{ $vente->id }} ?'))
                                                                 document.getElementById({{ $vente->id }}).submit()
                                                             "
-                                                            class="btn btn-danger">
+                                                            class="btn btn-danger rounded-pill shadow-sm d-inline-flex align-items-center justify-content-center">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form>
@@ -121,5 +125,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

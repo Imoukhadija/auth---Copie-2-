@@ -7,10 +7,10 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-sm-12">
                         <h2> <b>client</b></h2>
                     </div>
-                    <div class="col-sm-7">
+                    <div class="col-sm-12">
                         <a href="{{route('indexcreate')}}" class="btn btn-secondary"><i class="material-icons"> <i class="fa-solid fa-plus"></i>
                         Ajouter un client   </a>					
                     </div>

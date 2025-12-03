@@ -42,7 +42,8 @@ Route::group(["prefix"=>"admin","middleware"=>"assign.guard:admin,admin/login"],
     Route::get("dashboard",function(){
         return view ("admin.dashboard");
     });
-    Route::get('paiements', [paiementController::class, 'index'])->name('paiements.index'); 
+    Route::get('paiements', [paiementController::class, 'index'])->name('paiements.index');
+    Route::post('paiements', [paiementController::class, 'store'])->name('paiements.store');
  Route::resource('categories', CategoriesController::class);
  Route::resource('vehicules', VehiculesController::class);
  Route::resource('garanties', GarantieController::class);

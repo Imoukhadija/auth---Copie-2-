@@ -2,19 +2,25 @@
 
 
 @section("content")
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
                             
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="d-flex flex-row justify-content-between align-items-center border-bottom pb-1">
-                                    <h3 class="text-secondary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-</svg> garantie
+                                    <h3 class="mb-3" style="text-align: center;">
+    <span class="badge px-3 py-2 d-inline-flex align-items-center"
+          style="font-size: 0.95rem;
+                 background: #8b5cf6;
+                 color: #fff;
+                 text-transform: uppercase;
+                 letter-spacing: 0.08em;">
+        
+         garantie             
+    </span>
+</h3>
                                     </h3>
                                     <a href="{{ route("garanties.create") }}" class="btn btn-primary">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
@@ -99,5 +105,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

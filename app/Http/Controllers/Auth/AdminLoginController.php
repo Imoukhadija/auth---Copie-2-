@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 class AdminLoginController extends Controller
 {
     use AuthenticatesUsers;
     public function __construct()
     {
-        $this->middleware('guest:admin,admin/dashboard')->except('logout');
+        $this->middleware('guest:admin,admin/login')->except('logout');
     }
     public function showLoginForm()
     {

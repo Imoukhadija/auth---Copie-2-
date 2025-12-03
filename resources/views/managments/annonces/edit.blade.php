@@ -9,12 +9,23 @@
                     <div class="card-body">
                         <div class="row">
                             
-                            <div class="col-md-8">
-                                <h3 class="text-secondary border-bottom mb-3 p-2">
-                                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-</svg>Modifier le annonce {{ $annonce->actor }}
-                                </h3>
+                            <div class="col-md-12">
+                               <center><h3 class="mb-3">
+    <span class="badge px-3 py-2 d-inline-flex align-items-center"
+          style="font-size: 0.95rem;
+                 background: #8b5cf6;
+                 color: #fff;
+                 text-transform: uppercase;
+                 letter-spacing: 0.08em;">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="18" height="18" fill="currentColor"
+             class="bi bi-plus mr-2" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3
+                     a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+        MODIFIER L'ANNONCE {{ strtoupper($annonce->actor) }}
+    </span>
+</h3></center>
                                 <form action="{{ route("annonces.update",$annonce->actor2) }}" method="post" enctype="multipart/form-data">
                                      @csrf
                                     @method("PUT")

@@ -98,7 +98,7 @@
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
-                                        Total de franchaise 
+                                        Total de franchaise s
                                     </div>
                                 </div>
                                 <input type="number"
@@ -165,7 +165,7 @@
                             <div  disabled class="form-group">
                                 <select name="paiement_type" class="form-control">
                                     <option value="" selected disabled>
-                                        Type de paiement
+                                        Type de paiements
                                     </option>
                                     <option value="cash"
                                         {{ $vente->paiement_type === "cash" ? "selected" : ""}}

@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicules;
- 
+
 use Illuminate\Http\Request;
- 
+
 use Illuminate\Support\Str;
 
 class VehiculesController extends Controller
 {
     public function __construct()
     {
-        return view('auth.admin.login');    }
+        // Constructor - add middleware here if needed
+    }
 
     /**
      * Display a listing of the resource.
@@ -58,14 +59,14 @@ class VehiculesController extends Controller
             "nom" => $nom,
             "titre2" => Str::slug($nom),
             "status" => $request->status,
-            'usage'=> $request-> usage,
-             'marque'=> $request-> marque,
-             'catégorie'=> $request-> catégorie,
-             'version'=> $request-> version,
-             'typemine'=> $request-> typemine,
-             'immatriculation'=> $request-> immatriculation,
-             'registration_date'=> $request->registration_date,
-             'expiration_date'=> $request-> expiration_date,
+            'usage' => $request->usage,
+            'marque' => $request->marque,
+            'catégorie' => $request->catégorie,
+            'version' => $request->version,
+            'typemine' => $request->typemine,
+            'immatriculation' => $request->immatriculation,
+            'registration_date' => $request->registration_date,
+            'expiration_date' => $request->expiration_date,
         ]);
         //redirect user
         return redirect()->route("vehicules.index")->with([
@@ -97,7 +98,7 @@ class VehiculesController extends Controller
     public function edit(Vehicules $vehicule)
     {
         //
-        return view("managments.vehicules.edit",compact('vehicule'))->with([
+        return view("managments.vehicules.edit", compact('vehicule'))->with([
             "vehicules" => $vehicule
         ]);
     }
@@ -114,21 +115,21 @@ class VehiculesController extends Controller
         //
         //validation
         $this->validate($request, [
-            "nom" => "required|unique:vehicules,nom," . $vehicule->id,//pour chercher si un vehicules ne se duplique pas
+            "nom" => "required|unique:vehicules,nom," . $vehicule->id, //pour chercher si un vehicules ne se duplique pas
             "status" => "required|boolean"
         ]);
         //store data
         $nom = $request->nom;
         $vehicule->update([
-            "nom" => $request->  nom,
-            'usage'=> $request->   usage,
-            'marque'=> $request-> marque,
-            'catégorie'=> $request-> catégorie,
-            'version'=> $request-> version,
-            'typemine'=> $request-> typemine,
-            'immatriculation'=> $request-> immatriculation,
-            'registration_date'=> $request-> registration_date,
-            'expiration_date'=> $request-> expiration_date,
+            "nom" => $request->nom,
+            'usage' => $request->usage,
+            'marque' => $request->marque,
+            'catégorie' => $request->catégorie,
+            'version' => $request->version,
+            'typemine' => $request->typemine,
+            'immatriculation' => $request->immatriculation,
+            'registration_date' => $request->registration_date,
+            'expiration_date' => $request->expiration_date,
             "titre2" => Str::slug($nom),
             "status" => $request->status,
         ]);

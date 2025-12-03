@@ -8,7 +8,7 @@
             <div class="col-md-6">
             <div class="form-group">
             <label for="Nature">Nature</label> <br>
-            <select name="Nature" id="Nature" class="form-control form-control-sm form-control-border" required="">
+            <select name="Nature" id="Nature" class="form-control form-control-lg form-control-border" required="">
                         <option value="personne physique  ">personne physique  </option>
                         <option value="personne morale  ">personne morale  </option>
                        
@@ -18,11 +18,11 @@
             </div>
                 <div class="form-group">
                     <label for="CIN_RC_IF" class="control-label">CIN/RC/IF</label>
-                    <input type="text" name="CIN_RC_IF" id="CIN_RC_IF" class="form-control form-control-sm form-control-border" placeholder="Enter CIN/RC/IF" value="" required="">
+                    <input type="text" name="CIN_RC_IF" id="CIN_RC_IF" class="form-control form-control-lg form-control-border" placeholder="Enter CIN/RC/IF" value="" required="">
                 </div>
                 <div class="form-group">
             <label for="civilite">civilite</label> <br>
-            <select name="civilite" id="civilite" class="form-control form-control-sm form-control-border" required="">
+            <select name="civilite" id="civilite" class="form-control form-control-lg form-control-border" required="">
                         <option value="Mademoiselle ">Mademoiselle </option>
                         <option value="Madame ">Madame </option>
                         <option value="Monsieur ">Monsieur </option>
@@ -33,15 +33,15 @@
             </div>
                 <div class="form-group">
                     <label for="Nom" class="control-label">Nom </label>
-                    <input type="text" name="Nom" id="Nom" class="form-control form-control-sm form-control-border" placeholder="Enter nom" value="">
+                    <input type="text" name="Nom" id="Nom" class="form-control form-control-lg form-control-border" placeholder="Enter nom" value="">
                 </div>
                 <div class="form-group">
                     <label for="Prenom" class="control-label">Prenom </label>
-                    <input type="text" name="Prenom" id="Prenom" class="form-control form-control-sm form-control-border" placeholder="Enter Prenom" value="">
+                    <input type="text" name="Prenom" id="Prenom" class="form-control form-control-lg form-control-border" placeholder="Enter Prenom" value="">
                 </div>
                 <div class="form-group">
                     <label for="date_naissance" class="control-label">Date de naissance </label>
-                    <input type="date" name="date_naissance" id="date_naissance" class="form-control form-control-sm form-control-border" placeholder="Enterer date de naissance" value="" required="">
+                    <input type="date" name="date_naissance" id="date_naissance" class="form-control form-control-lg form-control-border" placeholder="Enterer date de naissance" value="" required="">
                 </div> 
                 <div class="form-group">
                 <label for="email">Genre </label>
@@ -50,7 +50,7 @@
                    </div>
                    <div class="form-group">
             <label for="Situation_familiale">Situation familiale</label> <br>
-            <select name="Situation_familiale" id="Situation_familiale" class="form-control form-control-sm form-control-border" required="">
+            <select name="Situation_familiale" id="Situation_familiale" class="form-control form-control-lg form-control-border" required="">
                         <option value="célibataire ">célibataire </option>
                         <option value="marié ">marié </option>
                         <option value="divorcé ">divorcé </option>
@@ -61,10 +61,10 @@
             </div>
             <div class="form-group">
                     <label for="adress" class="control-label">Address</label>
-                    <textarea rows="3" name="adress" id="adress" class="form-control form-control-sm rounded-0" placeholder="Tapez votre adress" required=""></textarea>
+                    <textarea rows="3" name="adress" id="adress" class="form-control form-control-lg rounded-0" placeholder="Tapez votre adress" required=""></textarea>
                 </div>
                 <div class="form-group">
-                <select name="Ville" id="Ville" for="Ville"   class="form-control form-control-sm form-control-border" required="" >
+                <select name="Ville" id="Ville" for="Ville"   class="form-control form-control-lg form-control-border" required="" >
                     <option value="">Toutes les villes</option>
                                             <option value="AGADIR">AGADIR</option>
                                             <option value="AïnElAouda">AïnElAouda</option>
@@ -167,7 +167,7 @@
             </div>
             <div class="form-group">
                     <label for="code_postale" class="control-label">code_postale </label>
-                    <input type="number" name="code_postale" id="code_postale" class="form-control form-control-sm form-control-border" placeholder="Enter code_postale #" value="" required="">
+                    <input type="number" name="code_postale" id="code_postale" class="form-control form-control-lg form-control-border" placeholder="Enter code_postale #" value="" required="">
                 </div>
                
                
@@ -198,12 +198,12 @@
             
                 <div class="form-group">
                     <label for="email" class="control-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control form-control-sm form-control-border" placeholder="Enter Email" value="" required="">
+                    <input type="email" name="email" id="email" class="form-control form-control-lg form-control-border" placeholder="Enter Email" value="" required="">
                 </div>
                
                 <div class="form-group">
                     <label for="lien_avec_le_souscripteur" class="control-label">lien avec le souscripteur</label>
-                      <select name="lien_avec_le_souscripteur" id="lien_avec_le_souscripteur" class="form-control form-control-sm form-control-border" required="">
+                      <select name="lien_avec_le_souscripteur" id="lien_avec_le_souscripteur" class="form-control form-control-lg form-control-border" required="">
                         <option value="Oui ">Oui </option>
                         <option value="Non ">Non </option>
                         
@@ -211,19 +211,19 @@
                 </div>
                 <div class="form-group">
                     <label for="CSP" class="control-label">CSP</label>
-                    <input type="text" name="CSP" id="CSP" class="form-control form-control-sm form-control-border" placeholder="Entrer CSP" value="" required="">
+                    <input type="text" name="CSP" id="CSP" class="form-control form-control-lg form-control-border" placeholder="Entrer CSP" value="" required="">
                 </div>
                 <div class="form-group">
                     <label for="numeropermi" class="control-label">numero de permi</label>
-                    <input type="text" name="numeropermi" id="numeropermi" class="form-control form-control-sm form-control-border" placeholder="Entrer CSP" value="" required="">
+                    <input type="text" name="numeropermi" id="numeropermi" class="form-control form-control-lg form-control-border" placeholder="Entrer CSP" value="" required="">
                 </div>
                 <div class="form-group">
                     <label for="datepermis" class="control-label">Date de permis</label>
-                    <input type="date" name="datepermis" id="datepermis" class="form-control form-control-sm form-control-border" placeholder="Entrer Date de permis" value="" required="">
+                    <input type="date" name="datepermis" id="datepermis" class="form-control form-control-lg form-control-border" placeholder="Entrer Date de permis" value="" required="">
                 </div>
                 <div class="form-group">
                     <label for="categoriepermi" class="control-label">categorie permi</label>
-                    <select name="categoriepermi" id="categoriepermi" class="form-control form-control-sm form-control-border" required="">
+                    <select name="categoriepermi" id="categoriepermi" class="form-control form-control-lg form-control-border" required="">
                         <option value="B ">B </option>
                         <option value="EB ">EB </option>
                         <option value="C ">C </option>
@@ -234,14 +234,14 @@
                 </div>
                 <div class="form-group">
                     <label for="status" class="control-label">Status</label>
-                    <select name="status" id="status" class="form-control form-control-sm form-control-border" required="">
+                    <select name="status" id="status" class="form-control form-control-lg form-control-border" required="">
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="image" class="control-label">Photo</label>
-                    <input type="file" accept="image/png, image/jpeg" name="image" id="image" class="form-control form-control-sm form-control-border" onchange="displayImg(this,$(this))">
+                    <input type="file" accept="image/png, image/jpeg" name="image" id="image" class="form-control form-control-lg form-control-border" onchange="displayImg(this,$(this))">
                 </div>
                 
                 <div class="form-group d-flex justify-content-center">

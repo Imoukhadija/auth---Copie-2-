@@ -9,10 +9,19 @@
                     <div class="card-body">
                         <div class="row">
                             
-                            <div class="col-md-8">
-                                <h3 class="text-secondary border-bottom mb-3 p-2">
-                                    <i class="fas fa-plus"></i> Ajouter une catégorie
-                                </h3>
+                            <div class="col-md-12">
+                                <h3 class="mb-3" style="text-align: center;">
+    <span class="badge px-3 py-2 d-inline-flex align-items-center"
+          style="font-size: 0.95rem;
+                 background: #8b5cf6;
+                 color: #fff;
+                 text-transform: uppercase;
+                 letter-spacing: 0.08em;">
+        
+         Ajouter une catégorie             
+    </span>
+</h3>
+                                
                                 <form action="{{ route("categories.store") }}" method="post">
                                     @csrf
                                     <div class="form-group">

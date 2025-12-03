@@ -4,126 +4,123 @@ namespace App\Http\Controllers;
 
 use App\Models\Ventes;
 use App\Models\Clients;
+use App\Models\Vehicules;
+use App\Models\Garanties;
 use Illuminate\Http\Request;
 
 class VentesController extends Controller
 {
-    public function __construct()
-    {
-        return view('auth.admin.login');    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth'); // ou autre middleware si nécessaire
+    // }
+
     public function index()
     {
-        //
-        $ventes = Ventes ::orderBy("created_at", "DESC")->paginate(2);
-        return view("ventes.index")->with([
-            "ventes" => $ventes 
-        ]);
+        $ventes = Ventes::orderBy('created_at', 'DESC')->paginate(10);
+        return view('ventes.index', compact('ventes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $clients = Clients::all();
+        $vehicules = Vehicules::all();
+        $categories = Garanties::with('category')->get()->groupBy('category_id');
+
+        return view('ventes.create', compact('clients', 'vehicules', 'categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //validation
-        $this->validate($request, [
-            "vehicule_id" => "required",
-            "garantie_id" => "required",
-            "client_id" => "required",
-            "quantite" => "required|numeric",
-            "prix_total" => "required|numeric",
-            "total_recu" => "required|numeric",
-            "change" => "required|numeric",
-            "paiement_type" => "required",
-            "paiement_status" => "required",
-           
+        // Validation
+        $validated = $request->validate([
+            'client_id' => 'required|exists:clients,id',
+            'vehicule_id' => 'required|array|min:1',
+            'vehicule_id.*' => 'exists:vehicules,id',
+            'garantie_id' => 'required|array|min:1', // <- garanties obligatoires
+            'garantie_id.*' => 'exists:garanties,id',
+            'quantite' => 'required|numeric|min:0',
+            'prix_total' => 'required|numeric|min:0',
+            'total_recu' => 'required|numeric|min:0',
+            'change' => 'required|numeric|min:0',
+            'paiement_type' => 'required|in:cash,card',
+            'paiement_status' => 'required|in:paid,unpaid',
+        ]);
 
+        // Création de la vente
+        $vente = Vente::create([
+            'client_id' => $request->client_id,
+            'vehicule_id' => implode(',', $request->vehicule_id), // si vous stockez en string, sinon gérer relation
+            'quantite' => $request->quantite,
+            'prix_total' => $request->prix_total,
+            'total_recu' => $request->total_recu,
+            'change' => $request->change,
+            'paiement_type' => $request->paiement_type,
+            'paiement_status' => $request->paiement_status,
         ]);
-        //store data
-        $vente = new Ventes();
-        $vente->client_id = $request->client_id;
-        $vente->quantite = $request->quantite;
-        $vente->prix_total = $request->prix_total;
-        $vente->total_recu = $request->total_recu;
-        $vente->change = $request->change;
-        $vente->paiement_status = $request->paiement_status;
-        $vente->paiement_type = $request->paiement_type;
-        $vente->save();
-        $vente->garanties()->sync($request->garantie_id);
-        $vente->vehicules()->sync($request->vehicule_id);
-        //redirect user
-        return redirect()->back()->with([
-            "success" => "Paiement effectué avec succés"
-        ]);
+
+        // Attacher les garanties sélectionnées
+        $vente->garanties()->attach($request->garantie_id);
+
+        return redirect()->route('ventes.index')->with('success', 'Vente ajoutée avec succès !');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ventes $ventes 
-     * @return \Illuminate\Http\Response
-     */
-    public function show(  Ventes $ventes )
+    public function show(Ventes $ventes)
     {
-        //
+        return view('ventes.show', compact('ventes'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Ventes   $ventes 
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-         
+        $vente = Ventes::findOrFail($id);
+        $clients = Clients::all();
+        $vehicules = Vehicules::all();
+        $categories = Garanties::with('category')->get()->groupBy('category_id');
+
+        return view('ventes.edit', compact('vente', 'clients', 'vehicules', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ventes  $ventes 
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        
+        $vente = Ventes::findOrFail($id);
+
+        $request->validate([
+            'client_id' => 'required|exists:clients,id',
+            'vehicule_id' => 'required|array|min:1',
+            'vehicule_id.*' => 'exists:vehicules,id',
+            'garantie_id' => 'required|array|min:1',
+            'garantie_id.*' => 'exists:garanties,id',
+            'quantite' => 'required|numeric|min:0',
+            'prix_total' => 'required|numeric|min:0',
+            'total_recu' => 'required|numeric|min:0',
+            'change' => 'required|numeric|min:0',
+            'paiement_type' => 'required|in:cash,card',
+            'paiement_status' => 'required|in:paid,unpaid',
+        ]);
+
+        $vente->update($request->only([
+            'client_id',
+            'quantite',
+            'prix_total',
+            'total_recu',
+            'change',
+            'paiement_type',
+            'paiement_status'
+        ]));
+
+        $vente->garanties()->sync($request->garantie_id);
+        $vente->vehicules()->sync($request->vehicule_id);
+
+        return redirect()->route('ventes.index')->with('success', 'Vente mise à jour avec succès !');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Ventes   $Ventes 
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //get vente to update
         $vente = Ventes::findOrFail($id);
-        //delete ventes
+        $vente->garanties()->detach();
+        $vente->vehicules()->detach();
         $vente->delete();
-        //redirect user
-        return redirect()->back()->with([
-            "success" => "Paiement supprimé avec succés"
-        ]);
+
+        return redirect()->back()->with('success', 'Paiement supprimé avec succès !');
     }
 }

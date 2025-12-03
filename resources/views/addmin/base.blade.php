@@ -2,7 +2,7 @@
 <html lang="en">
 @include('addmin.layouts.head')
 
-<body   class="hold-transition sidebar-mini layout-fixed ">
+<body   class="hold-transition sidebar-mini ">
     <div class="wrapper">
 
         <!-- Preloader -->

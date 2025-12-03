@@ -2,7 +2,7 @@
 
 
 @section("content")
-    <div class="container">
+    <div class="container ">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -10,11 +10,16 @@
                         <div class="row">
                             
                             <div class="col-md-8">
-                                <h3 class="text-secondary border-bottom mb-3 p-2">
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-</svg> Ajouter une annonce
-                                </h3>
+                                <h3 class="mb-3">
+    <span class="badge badge-primary px-3 py-2 d-inline-flex align-items-center" style="font-size: 0.95rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+             class="bi bi-plus mr-2" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3
+                     a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+        Ajouter une annonce
+    </span>
+</h3>
                                 <form action="{{ route("annonces.store") }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
@@ -35,7 +40,7 @@
                                     </div>
                                     <div class="form-group">
                     <label for="dates" class="control-label">dates </label>
-                    <input type="date" name="dates" id="dates" class="form-control form-control-sm form-control-border" placeholder="Entrer date" value="" required="">
+                    <input type="date" name="dates" id="dates" class="form-control form-control-lg form-control-border" placeholder="Entrer date" value="" required="">
                 </div>
                                  
                                     <div class="form-group">

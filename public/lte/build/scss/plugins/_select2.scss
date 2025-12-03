@@ -215,15 +215,15 @@
   }
 }
 
-// text-sm / form-control-sm override
-select.form-control-sm ~ {
+// text-sm / form-control-lg override
+select.form-control-lg ~ {
   .select2-container--default {
     font-size: 75%;
   }
 }
 
 .text-sm,
-select.form-control-sm ~ {
+select.form-control-lg ~ {
   .select2-container--default {
     .select2-selection--single {
       height: $input-height-sm;
